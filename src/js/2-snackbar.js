@@ -6,7 +6,6 @@ form.addEventListener('submit', createNotification);
 function createNotification(event) {
   event.preventDefault();
   const { delay, state } = event.target.elements;
-
   const delayTime = Number(delay.value);
 
   const promise = new Promise((resolve, reject) => {
@@ -19,8 +18,6 @@ function createNotification(event) {
 
   promise
     .then(success => {
-      console.log(success);
-
       iziToast.show({
         message: success,
         closeOnClick: true,
